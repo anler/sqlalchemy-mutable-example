@@ -31,7 +31,10 @@ def main():
     cached_detached_account = pickle.loads(pickle.dumps(account))
     cached_persistent_account = session.merge(cached_detached_account, load=False)
 
-    # As I see it these assertions should fail but they pass :thinking-face:
-    assert cached_persistent_account not in cached_detached_account.settings._parents
     cached_persistent_account.settings["email_notifications"] = True
-    assert not sa.inspect(cached_persistent_account).modified
+
+    # Both of these assertions fail
+    assert sa.inspect(cached_persistent_account).modified, "instance not modified"
+    assert (
+        cached_persistent_account in cached_detached_account.settings._parents
+    ), "instance not being tracked"
