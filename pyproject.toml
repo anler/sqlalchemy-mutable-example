@@ -6,7 +6,7 @@ authors = ["Anler Hernández Peral <hola@anler.me>"]
 
 [tool.poetry.dependencies]
 python = "^3.10"
-SQLAlchemy = "1.3.24"
+SQLAlchemy = "1.4.40"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
