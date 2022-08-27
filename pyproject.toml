@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "sa-mutable"
+version = "0.1.0"
+description = ""
+authors = ["Anler Hernández Peral <hola@anler.me>"]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+SQLAlchemy = "1.3.24"
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.2"
+ipdb = "^0.13.9"
+black = "^22.6.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
